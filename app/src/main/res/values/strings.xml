@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GithubApps</string>
+
+    <string name="search">Search</string>
+    <string name="search_hint">Masukkan Kata</string>
+    <string name="detail">Detail</string>
+    <string name="username_profile">Username Profile</string>
+    <string name="location">Location</string>
+    <string name="twitter">Twitter</string>
+</resources>
