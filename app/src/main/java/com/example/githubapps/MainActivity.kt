@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubapps.databinding.ActivityMainBinding
 import retrofit2.Call
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         getUsers()
     }
 
-    private fun setGithubProfile(profile: List<GithubResponseItem>?){
+    private fun setGithubProfile(profile: List<GithubUserItem>?){
 
         if (profile != null){
             val adapter = GithubAdapter(profile)
@@ -40,10 +39,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun getUsers(){
         val client = ApiConfig.getApiService().getUser()
-        client.enqueue(object : Callback<List<GithubResponseItem>> {
+        client.enqueue(object : Callback<List<GithubUserItem>> {
             override fun onResponse(
-                call: Call<List<GithubResponseItem>>,
-                response: Response<List<GithubResponseItem>>
+                call: Call<List<GithubUserItem>>,
+                response: Response<List<GithubUserItem>>
             ) {
                 showLoading(false)
                 if (response.isSuccessful){
@@ -54,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<GithubResponseItem>>, t: Throwable) {
+            override fun onFailure(call: Call<List<GithubUserItem>>, t: Throwable) {
                 Log.e("MainActivity", "onFailure: ${t.message}")
             }
 

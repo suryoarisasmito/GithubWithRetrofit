@@ -2,7 +2,7 @@ package com.example.githubapps
 
 import com.google.gson.annotations.SerializedName
 
-data class GithubResponseItem(
+data class GithubUserItem(
 
 	@field:SerializedName("gists_url")
 	val gistsUrl: String,
@@ -60,7 +60,7 @@ data class GithubResponseItem(
 )
 
 
-data class GithubResponseDetailItem(
+data class GithubUserDetail(
 
 	@field:SerializedName("login")
 	val login: String,
@@ -73,5 +73,8 @@ data class GithubResponseDetailItem(
 
 	@field:SerializedName("twitter_username")
 	val twitter: String,
+
+	@field:SerializedName("avatar_url")
+	val avatarUrl: String
 )
 

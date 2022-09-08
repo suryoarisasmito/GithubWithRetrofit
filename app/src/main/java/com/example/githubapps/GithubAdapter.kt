@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class GithubAdapter(private val listGithub : List<GithubResponseItem>) : RecyclerView.Adapter<GithubAdapter.ViewHolder>() {
+class GithubAdapter(private val listGithub : List<GithubUserItem>) : RecyclerView.Adapter<GithubAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(viewGroup.context).inflate(R.layout.item_profile, viewGroup, false))
